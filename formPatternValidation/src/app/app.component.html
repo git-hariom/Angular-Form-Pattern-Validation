@@ -1,0 +1,5 @@
+<form [formGroup]="testFormGrp" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="username">
+  <button type="submit"></button>
+  <span *ngIf="testFormGrp.get('username').hasError('pattern')">Error Occurred</span>
+</form>
