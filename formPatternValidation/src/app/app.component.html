@@ -1,5 +1,28 @@
 <form [formGroup]="testFormGrp" (ngSubmit)="onSubmit()">
-  <input type="text" formControlName="username">
+  <div>
+    USERNAME <input type="text" formControlName="username">
+    <div *ngIf="username.invalid && username.touched">Error Occurred on UserName</div>
+  </div>
+
+  <div>
+    EMAIL <input type="email" formControlName="email">
+    <div *ngIf="email.invalid && email.touched">Error Occurred on Email</div>
+  </div>
+
+  <div>
+    PASSWORD <input type="text" formControlName="password">
+    <div *ngIf="password.invalid && password.touched">Error Occurred on Password</div>
+  </div>
+
+  <div>
+    ADDRESS <input type="text" formControlName="address">
+    <div *ngIf="address.invalid && address.touched">Error Occurred on Address</div>
+  </div>
+
+  <div>
+    PHONE <input type="number" formControlName="phone">
+    <div *ngIf="phone.invalid && phone.touched">Error Occurred on Phone</div>
+  </div>
+
   <button type="submit"></button>
-  <span *ngIf="testFormGrp.get('username').hasError('pattern')">Error Occurred</span>
 </form>
